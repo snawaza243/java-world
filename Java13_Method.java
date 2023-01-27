@@ -60,15 +60,15 @@ public class Java13_Method {
         return x + y;
     }
 
-    static void methodScope()
-    {
-        int x=12;
+    static void methodScope() {
+        int x = 12;
         System.out.println(x);
 
         // System.out.println(y)
-        ; //error to access y
+        ; // error to access y
         int y = 45;
     }
+
     public static void main(String[] args) {
 
         // method1("Sam");
