@@ -1,4 +1,4 @@
-package RecursionProblem;
+package LecturePractice;
 
 public class DecodeStrNum3 {
     static int numDecodings(String s) {
