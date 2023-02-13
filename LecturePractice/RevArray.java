@@ -1,4 +1,4 @@
-package LecturePractice;
+// package LecturePractice;
 public class RevArray {
     static void ReverseArray(int arr[]) {
         int size = arr.length;
