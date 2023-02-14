@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Second App</string>
+    
+    <string name="addText">Add</string>
+    <string name="subText">Subtract</string>
+    <string name="multText">Multiply</string>
+    <string name="divText">Divide</string>
+</resources>
