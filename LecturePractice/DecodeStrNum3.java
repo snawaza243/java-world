@@ -26,6 +26,6 @@ public class DecodeStrNum3 {
 
     public static void main(String[] args) {
 
-System.out.println(numDecodings("90"));
+        System.out.println(numDecodings("90"));
     }
 }
