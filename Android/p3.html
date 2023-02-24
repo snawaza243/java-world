@@ -1,0 +1,111 @@
+<html>
+<head>
+  <meta name=”robots” content="index, follow">
+  <meta charset="UTF-8">
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Android App Life Cycle of Two Activities">
+  <meta name="keywords" content="Android, Android Studio, Android App Life Cycle">
+  <meta name="author" content="IndianTechnoEra">
+
+  <!-- refresh and redirect -->
+  <!-- <meta http-equiv="refresh" content="5;url=" https://example.com/"> -->
+  <title>
+    Android App Life Cycle of Two Activities
+  </title>
+</head>
+<body>
+
+    <h2 style="text-align: left;">&nbsp;Aim:&nbsp;</h2>
+<p>Write a program to study the life cycle of two activities.</p>
+<p>
+  In this practical there will be define two different pages and then both pages
+  will be connected with each other like suppose one page is the first page and
+  another page is the second page and on the clicking on the button of first
+  page we will move to another page
+</p>
+<div class="separator" style="clear: both; text-align: center;">
+  <a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhE6GAh28oXOH8igScCUSSRthutJoyJlqlMhGpaqyIGLDR8WhWkzQeqG_E9wfe8gPcioPAwBh58JDnvNDlT2cxOZ_3AOWoBOShXU97h7Yvm8RU6SqMPFXtMPNCtqOe-dlE9XwtrOwdlEQlha3bAM3DUkYxUPW15BYIlFY_VmnMef0b2DemSW1oRRUmL/s662/Android%20App%20Life%20Cycle%20of%20Two%20Activities.png"
+    imageanchor="1"
+    style="margin-left: 1em; margin-right: 1em;"
+    ><img
+      border="0"
+      data-original-height="295"
+      data-original-width="662"
+      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhE6GAh28oXOH8igScCUSSRthutJoyJlqlMhGpaqyIGLDR8WhWkzQeqG_E9wfe8gPcioPAwBh58JDnvNDlT2cxOZ_3AOWoBOShXU97h7Yvm8RU6SqMPFXtMPNCtqOe-dlE9XwtrOwdlEQlha3bAM3DUkYxUPW15BYIlFY_VmnMef0b2DemSW1oRRUmL/s16000/Android%20App%20Life%20Cycle%20of%20Two%20Activities.png"
+  /></a>
+</div>
+<br />
+<p style="text-align: center;"><br /></p>
+<h2 style="text-align: left;">Process</h2>
+<p>
+  After create the project we will get one My_Activity.java and
+  activity_main.xml file default
+</p>
+<p>
+  Drag one button upon the first page activity_main.xml then give a name to the
+  button and give an onClick event then go to the code form of UI and press
+  ‘Alt+Enter’&nbsp; just right of the onClick function name and Create related
+  activity in Main_Activity.java.&nbsp;
+</p>
+<p>
+  Another way to give the elements name from string.xml file as &lt;string
+  name=”btnName”&gt; Go to second page &lt;/string&gt; in between
+  &lt;resources&gt; tag.&nbsp; And there after assign the value to the element
+  in activity_main.xml file as “@string/btnName
+</p>
+<p><br /></p>
+<p>Define all the activity methods as the first practical in activity one.</p>
+<p>Then create new activity by following the given steps&nbsp;</p>
+<p>
+  right click on MainActivity.java folder &gt;&gt; New &gt;&gt; Activity
+  &gt;&gt; Basic Activity &gt;&gt; give name &gt;&gt; ok
+</p>
+<p><br /></p>
+<p>
+  A new Main_Activity.xml will create and also another activity_main2.xml file
+  will create in layout folder for UI part of second activity.
+</p>
+<p>The a new activity_main2.xml will be create automatic</p>
+<p>
+  Then here also define all the endowed methods activity. As the name a second
+  phase. Like on Pause First page, on Start, Pause page, on desktop page, on
+  resume, post pairs like.
+</p>
+<p><br /></p>
+<p>
+  Then on the method of button, create an intent in Main_Activity.java and pass
+  the value of 2nd activity UI&nbsp;
+</p>
+<p><br /></p>
+<h2 style="text-align: left;">Code:</h2>
+<p>MainActivity.java for program of the first activity</p>
+<p>MainActivity2.java for program of the second page activity</p>
+<p>
+  activity_main.xml for the UI part of the first page that will be handle by the
+  first activity
+</p>
+<p>
+  activity_main2.xml for the UI part of the second page that will appear for the
+  second page
+</p>
+<div><br /></div>
+<h3 style="text-align: left;">MainActivity.java</h3>
+<script src="https://gist.github.com/snawaza243/f06f55c59d106fbf23d4c6fd376f2dfd.js"></script>
+<p><br /></p>
+<h3>MainActivity2.java</h3>
+<script src="https://gist.github.com/snawaza243/a89673db3589b9d2bf19fc42ee92ce05.js"></script>
+<p><br /></p>
+<h3 style="text-align: left;">activity_main.xml</h3>
+<script src="https://gist.github.com/snawaza243/889a1e7bb8b29251f776e1de5ed33b97.js"></script>
+<p><br /></p>
+<h3>activity_main2.xml</h3>
+<script src="https://gist.github.com/snawaza243/deaabd9fb06ffa40ccb698490f62a4b6.js"></script>
+<p><br /></p>
+<p>Output:</p>
+<p><br /></p>
+
+
+</body>
+</html>

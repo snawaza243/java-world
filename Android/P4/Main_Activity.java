@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
         tv1 = findViewById(R.id.textView1);
         im1 = findViewById(R.id.imgview1);
 
-
         Intent receivedIntent =  getIntent();
         String receivedAction = receivedIntent.getAction();
         String receivedType = receivedIntent.getType();
