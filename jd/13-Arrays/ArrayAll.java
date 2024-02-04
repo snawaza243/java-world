@@ -73,10 +73,138 @@ public class ArrayAll {
         return -1;
     }
 
+    public static void reverseArray(int arr[]) {
+        int n = arr.length;
+        int a = 0;
+        int b = n - 1;
+        int temp;
+
+        // for (int i = 0; i < n; i++) {
+        // temp = arr[a];
+        // arr[a] = arr[b];
+        // arr[b] = temp;
+        // }
+
+        while (a < b) {
+            temp = arr[a];
+            arr[a] = arr[b];
+            arr[b] = arr[b];
+            a++;
+            b--;
+
+        }
+    }
+
+    public static void pairsArray(int arr[]) {
+        int n = arr.length;
+        int nPairs = 0;
+
+        for (int i = 0; i < n; i++) {
+
+            for (int j = i; j < n; j++) {
+                System.out.print("(" + arr[i] + ", " + arr[j] + ")");
+                nPairs++;
+            }
+            System.out.println();
+        }
+        System.out.println("Total No of pairs = " + nPairs);
+    }
+
+    public static void subArrays(int arr[]) {
+        int n = arr.length;
+        int nSubArray = 0;
+        int vMax = Integer.MIN_VALUE;
+        int vMin = Integer.MAX_VALUE;
+
+        for (int i = 0; i < n; i++) {
+            int start = i;
+
+            int sum = 0;
+            for (int j = i; j < n; j++) {
+                int end = j;
+
+                System.out.print("[");
+
+                for (int k = start; k <= end; k++) {
+                    System.out.print(arr[k]);
+
+                    sum += arr[k];
+
+                    if (arr[k] > vMax) {
+                        vMax = arr[k];
+
+                    }
+                    if (arr[k] < vMin) {
+                        vMin = arr[k];
+                    }
+                }
+                System.out.print("]");
+
+            }
+            System.out.print(" \t Larger Number = " + vMax);
+            System.out.print(", Smaller Number = " + vMin);
+            System.out.print(", Sum of array = " + sum);
+
+            System.out.println();
+        }
+    }
+
+    public static void maxSubArraySum(int arr[]) {
+        int n = arr.length;
+        int sum = 0;
+        int max = Integer.MIN_VALUE;
+
+        for (int i = 0; i < n; i++) {
+            int start = i;
+            for (int j = i; j < n; j++) {
+                int end = j;
+
+                sum = 0;
+                for (int k = start; k <= end; k++) {
+                    System.out.print(arr[k] + " ");
+                    sum += arr[k];
+                    if (sum > max) {
+                        max = sum;
+                    }
+                }
+                // System.out.println(max);
+                System.out.println();
+            }
+            System.out.println();
+        }
+        System.out.println("Maximum sum = " + max);
+    }
+
+    public static void maxSumSubArrayPrefix(int arr[]) {
+        int n = arr.length;
+        int sum = 0;
+        int maxSum = Integer.MIN_VALUE;
+        int prefix[] = new int[arr.length];
+
+        prefix[0] = arr[0];
+
+        for (int i = 1; i < n; i++) {
+            prefix[i] = prefix[i - 1] + arr[i];
+        }
+
+        for (int i = 0; i < n; i++) {
+            int start = i;
+
+            for (int j = i; j < n; j++) {
+                int end = j;
+                // sum = 0;
+                sum = start == 0 ? prefix[end] : prefix[end] - prefix[start - 1];
+                if (maxSum < sum) {
+                    maxSum = sum;
+                }
+            }
+        }
+        System.out.println("Max Sum = " + maxSum);
+    }
 
     public static void main(String[] args) {
 
-        int arr[] = { 3, 4, 5, 6, 7, 8, 9 };
+        int arr[] = { 1, 2, 3, 4 };
         // printArray(arr);
         // arrayIO();
 
@@ -84,6 +212,13 @@ public class ArrayAll {
         // largestInArray(arr);
         // binarySearch(arr, 0);
         // System.out.println(binarySearch(arr, 5));
+        // reverseArray(arr);
+        // printArray(arr);
+        // pairsArray(arr);
+        // subArrays(arr);
+        // maxSubArraySum(arr);
+
+        maxSumSubArrayPrefix(arr);
 
     }
 }
