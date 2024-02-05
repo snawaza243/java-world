@@ -202,9 +202,69 @@ public class ArrayAll {
         System.out.println("Max Sum = " + maxSum);
     }
 
+    public static void maxSubSumKadans(int arr[]) {
+        int sum = 0;
+        int maxSum = Integer.MIN_VALUE;
+
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+            if (sum < 0) {
+                sum = 0;
+            }
+            maxSum = Math.max(maxSum, sum);
+        }
+        System.out.println("Max sum = " + maxSum);
+
+    }
+
+    public static int trappingWater(int arr[]) {
+        int n = arr.length;
+        int leftMax[] = new int[n];
+
+        leftMax[0] = arr[0];
+
+        for (int i = 1; i < n; i++) {
+            leftMax[i] = Math.max(arr[i], leftMax[i - 1]);
+        }
+
+        int rightMax[] = new int[n];
+
+        rightMax[n - 1] = arr[n - 1];
+        for (int i = n - 2; i >= 0; i--) {
+            rightMax[i] = Math.max(arr[i], rightMax[i + 1]);
+
+        }
+
+        int trappedWater = 0;
+
+        for (int i = 0; i < n; i++) {
+            int waterLevel = Math.min(leftMax[i], rightMax[i]);
+            trappedWater += waterLevel - arr[i];
+        }
+
+        return trappedWater;
+    }
+
+    public static int buySellingPrice(int arr[]) {
+        int n = arr.length;
+        int buyPrice = Integer.MAX_VALUE;
+        int maxProfit = 0;
+
+        for (int i = 0; i < n; i++) {
+            if (buyPrice < arr[i]) {
+                int profit = arr[i] - buyPrice;
+                maxProfit = Math.max(maxProfit, profit);
+
+            } else {
+                buyPrice = arr[i];
+            }
+        }
+        return maxProfit;
+    }
+
     public static void main(String[] args) {
 
-        int arr[] = { 1, 2, 3, 4 };
+        int arr[] = { 4, 2, 0, 6, 3, 2, 5 };
         // printArray(arr);
         // arrayIO();
 
@@ -218,7 +278,11 @@ public class ArrayAll {
         // subArrays(arr);
         // maxSubArraySum(arr);
 
-        maxSumSubArrayPrefix(arr);
+        // maxSumSubArrayPrefix(arr);
+        // maxSubSumKadans(arr);
+
+        // System.out.println(trappingWater(arr));
+        System.out.println(buySellingPrice(arr));
 
     }
 }
