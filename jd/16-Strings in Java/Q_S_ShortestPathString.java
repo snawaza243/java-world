@@ -1,6 +1,6 @@
 import javax.print.DocFlavor.STRING;
 
-public class ShortestPathString {
+public class Q_S_ShortestPathString {
 
     public static float getShortestPath(String path) {
 

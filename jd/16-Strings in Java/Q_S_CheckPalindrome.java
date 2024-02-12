@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class StringPalindrome {
+public class Q_S_CheckPalindrome {
 
     public static boolean pd1(String str) {
         int startIndex = 0;

@@ -3,24 +3,40 @@ import java.util.Scanner;
 public class StringsInJava {
 
     public static void main(String[] args) {
+        int intVar = 10;
+        float floatVar = 20;
+        String stringVar = "hello";
+
+        String fs;
+        fs = String.format("The value of the float " +
+                "variable is %f, while " +
+                "the value of the " +
+                "integer variable is %d, " +
+                " and the string is %s",
+                floatVar, intVar, stringVar);
+        System.out.println(fs);
+
+        // 9 string builder
+        // StringBuilder sb = new StringBuilder("");
+        // for (char ch = 'a'; ch <= 'z'; ch++) {
+        // sb.append(ch + " ");
+        // }
+        // System.out.println(sb);
 
         // 8. compareTo()
-
-        String str1 = "B";
-        String str2 = "b";
-
+        // String str1 = "B";
+        // String str2 = "b";
         // System.out.println(str1.compareTo(str2));
-        int r = str1.compareTo(str2);
+        // int r = str1.compareTo(str2);
         // int r = str1.compareToIgnoreCase(str2);
 
-
-        if (r == 0) {
-            System.out.println("Is Equal");
-        } else if (r < 0) {
-            System.out.println("str1 Smaller than str2");
-        } else if (r > 0) {
-            System.out.println("str1 is larger than str2");
-        }
+        // if (r == 0) {
+        // System.out.println("Is Equal");
+        // } else if (r < 0) {
+        // System.out.println("str1 Smaller than str2");
+        // } else if (r > 0) {
+        // System.out.println("str1 is larger than str2");
+        // }
 
         // 7. .substring(si, ei)
         // String str ="Hello World";

@@ -1,5 +1,5 @@
 
-public class PrintLargestString {
+public class Q_S_PrintLargestString {
 
     public static void main(String[] args) {
         String str[] = { "apple", "mango", "banana" };

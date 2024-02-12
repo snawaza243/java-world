@@ -60,16 +60,74 @@ public class StringQuestions {
         return largest;
     }
 
+    public static String printAlphaSB() {
+        StringBuilder sb = new StringBuilder("");
+        for (char ch = 'a'; ch <= 'z'; ch++) {
+            sb.append(ch + " ");
+        }
+
+        return sb.toString();
+    }
+
+    public static String lettersToUpper(String str) {
+        int n = str.length();
+        StringBuilder sb = new StringBuilder("");
+
+        char ch = Character.toUpperCase(str.charAt(0));
+        sb.append(ch);
+        for (int i = 1; i < n; i++) {
+            if (str.charAt(i) == ' ' && i < n - 1) {
+                sb.append(str.charAt(i));
+                i++;
+                sb.append(Character.toUpperCase(str.charAt(i)));
+            } else {
+                sb.append(str.charAt(i));
+            }
+        }
+        return sb.toString();
+
+    }
+
+    public static String stringCompress(String str) {
+        String newStr = "";
+        for (int i = 0; i < str.length(); i++) {
+            // we need 2 string to add in string the count so use Integer class
+            Integer count = 1;
+            while (i < str.length() - 1 && str.charAt(i) == str.charAt(i + 1)) {
+                count++;
+                i++;
+            }
+            newStr += str.charAt(i);
+
+            if (count > 1) {
+                newStr += count.toString();
+            }
+        }
+        return newStr;
+    }
+
     public static void main(String[] args) {
 
-        // 8. largest substring 
+        String str = "This is a sample text replace character ";
+        str = str.replace("a", "aa");
+        System.out.println(str);
 
-        System.out.println(printLargestString(args));
+        // String str = "aabbcdddeer";
+        // System.out.println(stringCompress(str));
 
+        // 10. convert letters to toUpperCase
+        // String str = "hi, i am sam.";
+        // System.out.println(lettersToUpper(str));
+
+        // 9. string builder
+        // System.out.println(printAlphaSB());
+
+        // 8. largest substring
+        // String str[] = {"apple", "mango", "orange"};
+        // System.out.println(printLargestString(str));
 
         // String str = "Hello World";
         // System.out.println(getSubstring(str, 0, 3));
-
 
         // String path = "WNEENESENNNW";
         // System.out.println(findShortPath(path));
