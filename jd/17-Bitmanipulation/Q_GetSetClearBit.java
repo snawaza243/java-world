@@ -19,10 +19,25 @@ public class Q_GetSetClearBit {
         return n & bitMask;
     }
 
+    public static int updateIthBit(int n, int i, int newBit) {
+        // if (newBit == 0) {
+        // clearithBit(n, i);
+        // } else {
+        // setithBit(n, i);
+        // }
+
+        n = clearithBit(n, i);
+        int BitMask = newBit << i;
+        return n | BitMask;
+
+    }
+
     public static void main(String[] args) {
         // System.out.println(getithBit(10, 3));
         // System.out.println(setithBit(10, 2));
+        // System.out.println(clearithBit(10, 1));
 
-        System.out.println(clearithBit(10, 1));
+        System.out.println(updateIthBit(10, 2, 1)); // 14
+
     }
 }
