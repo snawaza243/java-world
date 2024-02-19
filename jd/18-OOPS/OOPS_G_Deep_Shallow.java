@@ -1,5 +1,5 @@
 
-public class OOPS_F_CopyConst {
+public class OOPS_G_Deep_Shallow {
 
     public static void main(String[] args) {
 
@@ -29,16 +29,27 @@ class Student {
     String pass;
     int marks[];
 
-    Student() {
-        marks = new int[3];
-    }
+    // shallow copy
+    // Student(Student s1) {
+    // marks = new int[3];
+    // this.marks = s1.marks;
+    // this.name = s1.name;
+    // this.roll = s1.roll;
+    // }
+
+    // deep copy
 
     Student(Student s1) {
         marks = new int[3];
-        this.marks = s1.marks;
         this.name = s1.name;
         this.roll = s1.roll;
-        this.marks = s1.marks;
+
+        for (int i = 0; i < marks.length; i++) {
+            this.marks[i] = s1.marks[i];
+        }
     }
 
+    Student() {
+        marks = new int[3];
+    }
 }
