@@ -29,16 +29,7 @@ class Student {
     String pass;
     int marks[];
 
-    // shallow copy
-    // Student(Student s1) {
-    // marks = new int[3];
-    // this.marks = s1.marks;
-    // this.name = s1.name;
-    // this.roll = s1.roll;
-    // }
-
     // deep copy
-
     Student(Student s1) {
         marks = new int[3];
         this.name = s1.name;
