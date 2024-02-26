@@ -1,4 +1,4 @@
-public class OOPS_B_SSG {
+public class OOPB_SSG {
     public static void main(String args[]) {
         System.out.println("Hello World!");
 

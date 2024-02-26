@@ -1,47 +1,39 @@
 public class OOPH_Inherit2 {
     public static void main(String[] args) {
-        MountainBike mb = new MountainBike(3, 100, 25);
-        System.out.println(mb.toString());
+        Bird b1 = new Bird();
+
+        b1.name = "Birds";
+        b1.color = "Brown";
+        b1.fly = true;
+
+        System.out.println(b1.name);
+        System.out.println(b1.color);
+        b1.breathe();
+        b1.eats();
+        System.out.println("Flying " + b1.fly);
+
     }
 }
 
-class Bicycle {
-    public int gear;
-    public int speed;
+class Animal {
+    String color, name;
 
-    public Bicycle(int gear, int speed) {
-        this.gear = gear;
-        this.speed = speed;
+    void eats() {
+        System.out.println("Animal  is Eating");
     }
 
-    public void applyBreak(int decrement) {
-        speed -= decrement;
+    void breathe() {
+        System.out.println("Animal  is Breathing");
     }
+}
 
-    public void speedUp(int increment) {
-        speed += increment;
-    }
-
-    public String toString() {
-        return ("No of gears are " + gear + "\n" + "speed of bicycle is " + speed);
-    }
+class Mammal extends Animal {
+    int weight;
+    int legs;
 
 }
 
-class MountainBike extends Bicycle {
-    public int seatHeight;
+class Bird extends Animal {
+    boolean fly;
 
-    public MountainBike(int gear, int speed, int startHeight) {
-        super(gear, speed);
-        seatHeight = startHeight;
-    }
-
-    public void seatHeight(int newValue) {
-        seatHeight = newValue;
-    }
-
-    @Override
-    public String toString() {
-        return (super.toString() + "\nseat height is " + seatHeight);
-    }
 }

@@ -1,4 +1,4 @@
-public class OOPH_Inheritance {
+public class OOPH_Inherit {
 
     public static void main(String[] args) {
         Fish shark = new Fish();
