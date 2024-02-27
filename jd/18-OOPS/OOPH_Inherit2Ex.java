@@ -1,4 +1,4 @@
-public class OOPH_Inherit2 {
+public class OOPH_Inherit2Ex {
     public static void main(String[] args) {
         MountainBike mb = new MountainBike(3, 100, 25);
         System.out.println(mb.toString());
