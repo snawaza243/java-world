@@ -6,9 +6,9 @@ public class OOPI_PolyAbst {
 
         Dog d1 = new Dog();
         // d1.color = "red";
-        System.out.println(d1.color);
-        d1.eats();
-        d1.walk();
+        // System.out.println(d1.color);
+        // d1.eats();
+        // d1.walk();
 
     }
 }
