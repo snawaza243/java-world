@@ -1,5 +1,5 @@
 
-public class OOPS_G_Deep_Shallow {
+public class OOPG_Deep {
 
     public static void main(String[] args) {
 

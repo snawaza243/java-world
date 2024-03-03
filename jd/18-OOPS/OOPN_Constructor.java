@@ -1,14 +1,20 @@
-public class OOPM_ConstructorChain {
+public class OOPN_Constructor {
     public static void main(String[] args) {
         // Creating an instance of the Car class using the constructor
-        Car myCar = new Car("Toyota", "Camry", 2022);
+        // Car myCar = new Car("Toyota", "Camry", 2022);
 
+        new Car();
         // Displaying details of the car
-        myCar.displayDetails();
+        // myCar.displayDetails();
     }
 }
 
 class Car {
+
+    Car(){
+        System.out.println("Car constructor called");
+
+    }
     // Attributes of the Car class
     String brand;
     String model;

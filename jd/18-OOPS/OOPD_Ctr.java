@@ -1,4 +1,4 @@
-public class OOPS_D_Ctr {
+public class OOPD_Ctr {
 
     public static void main(String[] args) {
         Student s1 = new Student();
