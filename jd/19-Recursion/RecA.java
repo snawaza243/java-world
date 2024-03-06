@@ -41,11 +41,56 @@ public class RecA {
         return sn;
     }
 
+    public static boolean isSorted(int arr[], int start) {
+        if (start == arr.length - 1) {
+            return true;
+        }
+        if (arr[start] > arr[start + 1]) {
+            return false;
+        }
+        return isSorted(arr, start + 1);
+
+        // tc, sc = O(n)
+    }
+
+    // prob 7: WAF to find the first occurrence of an element in an array
+
+    public static int isOccurred(int arr[], int start, int key) {
+        if (arr[start] == key) {
+
+            return start;
+        }
+        if (arr[start] > arr[start + 1]) {
+            return -1;
+        }
+        return isOccurred(arr, start + 1, key);
+
+        // tc, sc = O(n)
+    }
+
+    public static int isOccurredLast(int arr[], int start, int key) {
+        if (start == arr.length) {
+            return -1;
+        }
+        int isFound = isOccurredLast(arr, start + 1, key);
+        if (isFound == -1 && arr[start] == key) {
+            return start;
+        }
+
+        return isFound;
+    }
+
     public static void main(String[] args) {
 
         // fun2(5);
+        // System.out.println(fun4(5));
 
-        System.out.println(fun4(5));
+        int arr[] = { 1, 4, 3, 4 };
+        // System.out.println(isSorted(arr, 0));
+        // System.out.println(isOccurred(arr, 0, 4));
+        System.out.println(isOccurredLast(arr, 0, 4));
+
+
     }
 
 }
