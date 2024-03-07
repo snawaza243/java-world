@@ -31,7 +31,7 @@ public class RecA {
         return fac;
     }
 
-    // calculate sum of number
+    // calculate sum of n number
     public static int fun4(int n) {
         if (n == 1) {
             return 1;
@@ -39,6 +39,20 @@ public class RecA {
         int snm1 = fun4(n - 1);
         int sn = n + snm1;
         return sn;
+    }
+
+    // calculate the fibonacci number
+    public static int fibonacci(int n) {
+
+        if (n == 0 || n == 1) {
+            return n;
+        }
+
+        int fm1 = fibonacci(n - 1);
+        int fm2 = fibonacci(n - 2);
+        int fm = fm1 + fm2;
+
+        return fm;
     }
 
     public static boolean isSorted(int arr[], int start) {
@@ -86,10 +100,15 @@ public class RecA {
         // System.out.println(fun4(5));
 
         int arr[] = { 1, 4, 3, 4 };
+
+        // System.out.println(fibonacci(6));
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(i + " = " + fibonacci(i));
+        }
         // System.out.println(isSorted(arr, 0));
         // System.out.println(isOccurred(arr, 0, 4));
-        System.out.println(isOccurredLast(arr, 0, 4));
-
+        // System.out.println(isOccurredLast(arr, 0, 4));
 
     }
 
