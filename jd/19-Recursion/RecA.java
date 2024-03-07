@@ -43,7 +43,6 @@ public class RecA {
 
     // calculate the fibonacci number
     public static int fibonacci(int n) {
-
         if (n == 0 || n == 1) {
             return n;
         }
