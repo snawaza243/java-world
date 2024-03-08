@@ -93,21 +93,93 @@ public class RecA {
         return isFound;
     }
 
+    public static int findPow(int x, int n) {
+        if (n == 0) {
+            return 1;
+        }
+        return x * findPow(x, n - 1);
+    }
+
+    public static int findPowOpt(int x, int n) {
+        if (n == 0) {
+            return 1;
+        }
+
+        int halfPow = findPowOpt(x, n / 2);
+        int halfPowSq = halfPow * halfPow;
+
+        if (n % 2 != 0) {
+            halfPowSq = x * halfPowSq;
+
+        }
+
+        return halfPowSq;
+    }
+
+    public static int tilingProb(int n) {
+        if (n == 0 || n == 1) {
+            return 1;
+        }
+
+        // task
+        // i. vertical
+        int fnm1 = tilingProb(n - 1);
+
+        // ii. horizontal
+        int fnm2 = tilingProb(n - 2);
+
+        int totWays = fnm1 + fnm2;
+
+        return totWays;
+
+    }
+
+    public static void remDup(String str, int idx, StringBuilder newStr, boolean map[]) {
+        if (idx == str.length()) {
+            System.out.println(newStr);
+            return;
+        }
+
+        char curChar = str.charAt(idx);
+
+        if (map[curChar - 'a'] == true) {
+            remDup(str, idx + 1, newStr, map);
+        }
+
+        else {
+            map[curChar - 'a'] = true;
+            remDup(str, idx + 1, newStr.append(curChar), map);
+        }
+    }
+
     public static void main(String[] args) {
 
         // fun2(5);
         // System.out.println(fun4(5));
 
-        int arr[] = { 1, 4, 3, 4 };
+        // int arr[] = { 1, 4, 3, 4 };
 
         // System.out.println(fibonacci(6));
 
-        for (int i = 1; i <= 10; i++) {
-            System.out.println(i + " = " + fibonacci(i));
-        }
+        // for (int i = 1; i <= 10; i++) {
+        // System.out.println(i + " = " + fibonacci(i));
+        // }
+
         // System.out.println(isSorted(arr, 0));
         // System.out.println(isOccurred(arr, 0, 4));
         // System.out.println(isOccurredLast(arr, 0, 4));
+
+        // System.out.println(findPow(3, 4));
+        // System.out.println(findPowOpt(3, 4));
+
+        // System.out.println(tilingProb(4));
+
+        String str = "inddianntechhnoerra";
+        StringBuilder sb = new StringBuilder();
+
+        boolean mp[] = new boolean[26];
+
+        remDup(str, 0, sb, mp);
 
     }
 
