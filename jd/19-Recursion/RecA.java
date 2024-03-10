@@ -134,6 +134,7 @@ public class RecA {
 
     }
 
+    // remove duplicate string from a string
     public static void remDup(String str, int idx, StringBuilder newStr, boolean map[]) {
         if (idx == str.length()) {
             System.out.println(newStr);
@@ -149,6 +150,37 @@ public class RecA {
         else {
             map[curChar - 'a'] = true;
             remDup(str, idx + 1, newStr.append(curChar), map);
+        }
+    }
+
+    // friends pairing problem
+
+    public static int friendPair(int n) {
+
+        if (n == 1 || n == 2) {
+            return n;
+        }
+
+        int fnm1 = friendPair(n - 1);
+        int fnm2 = friendPair(n - 2);
+        int pairWays = (n - 1) * fnm2;
+
+        int totWays = fnm1 + pairWays;
+
+        return totWays;
+    }
+
+    public static void printBiStr(int n, int lastPlace, String str) {
+
+        if (n == 0) {
+            System.out.println(str);
+            return;
+        }
+
+        printBiStr(n - 1, 0, str + "0");
+
+        if (lastPlace == 0) {
+            printBiStr(n - 1, 1, str + "1");
         }
     }
 
@@ -174,13 +206,14 @@ public class RecA {
 
         // System.out.println(tilingProb(4));
 
-        String str = "inddianntechhnoerra";
-        StringBuilder sb = new StringBuilder();
+        // String str = "inddianntechhnoerra";
+        // StringBuilder sb = new StringBuilder();
+        // boolean mp[] = new boolean[26];
+        // remDup(str, 0, sb, mp);
 
-        boolean mp[] = new boolean[26];
+        // System.out.println(friendPair(3));
 
-        remDup(str, 0, sb, mp);
-
+        printBiStr(3, 0, "");
     }
 
 }
